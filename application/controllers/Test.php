@@ -19,4 +19,11 @@ class Test extends CI_Controller
 		$data['lname']='Beam';
 		$this->load->view('test/second',$data);
 	}
+
+	public function showNames()
+	{
+		$this->load->model('Test_model');
+		$data['customers']=$this->Test_model->getCustomer();
+		$this->load->view('test/showNames',$data);
+	}
 }
